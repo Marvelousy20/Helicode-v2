@@ -21,16 +21,6 @@ export function HeroSection() {
         </p>
 
         {/* CTA Form */}
-        {/* <div className="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-lg mx-auto">
-          <Input
-            type="email"
-            placeholder="Email address"
-            className="flex-1 h-12 rounded-full border-2 border-border focus-visible:ring-2 focus-visible:ring-primary"
-          />
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-12 px-8 font-semibold whitespace-nowrap">
-            Start Your Project
-          </Button>
-        </div> */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-lg mx-auto">
           <EmailCapture />
         </div>

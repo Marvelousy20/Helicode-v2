@@ -22,17 +22,12 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!email || !email.includes("@")) {
-      return;
-    }
+    if (!email || !email.includes("@")) return;
 
     setIsLoading(true);
 
     try {
-      // Call the onSubmit callback if provided
       await onSubmit?.(email);
-
-      // Clear the input after successful submission
       setEmail("");
     } catch (error) {
       console.error("Error submitting email:", error);
@@ -44,9 +39,12 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className={cn("flex items-center w-full max-w-2xl mx-auto", className)}
+      className={cn(
+        "flex flex-col sm:flex-row items-stretch sm:items-center w-full max-w-2xl mx-auto gap-3 sm:gap-0",
+        className
+      )}
     >
-      <div className="relative flex items-center w-full bg-[#E3E8EF] rounded-full p-1 border border-[#E3E8EF]">
+      <div className="relative flex w-full bg-[#E3E8EF] rounded-full border border-[#E3E8EF] p-1 sm:p-1.5">
         <input
           type="email"
           value={email}
@@ -54,7 +52,7 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({
           placeholder={placeholder}
           required
           disabled={isLoading}
-          className="flex-1 bg-transparent px-6 py-3 text-base text-gray-900 placeholder-gray-500 outline-none disabled:opacity-50"
+          className="flex-1 bg-transparent px-5 sm:px-6 py-3 text-base text-gray-900 placeholder-gray-500 outline-none disabled:opacity-50"
           style={{ fontSize: "16px" }} // Prevent zoom on iOS
         />
 
@@ -62,12 +60,11 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({
           type="submit"
           disabled={isLoading || !email}
           className={cn(
-            "px-8 py-4 rounded-full bg-[#5500FE]! text-white font-bold text-base",
+            "hidden sm:inline-flex px-8 py-4 rounded-full bg-[#5500FE] text-white font-bold text-base",
             "transition-all duration-200",
             "hover:bg-purple-700 active:scale-[0.98]",
             "focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2",
-            "disabled:opacity-100 disabled:cursor-not-allowed",
-            "whitespace-nowrap"
+            "disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
           )}
         >
           {isLoading ? (
@@ -95,6 +92,21 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({
           )}
         </button>
       </div>
+
+      {/* Mobile button (below input) */}
+      <button
+        type="submit"
+        disabled={isLoading || !email}
+        className={cn(
+          "sm:hidden w-full px-6 py-3 rounded-full bg-[#5500FE] text-white font-bold text-base",
+          "transition-all duration-200",
+          "hover:bg-purple-700 active:scale-[0.98]",
+          "focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2",
+          "disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
+        )}
+      >
+        {isLoading ? "Sending..." : buttonText}
+      </button>
     </form>
   );
 };

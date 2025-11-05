@@ -31,7 +31,7 @@ export function Footer() {
             />
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex flex-col md:flex-row justify-between gap-y-10">
             <div>
               <h5 className="font-semibold mb-4 md:text-2xl">Product</h5>
               <ul className="space-y-2 text-[#9AA4B2]">

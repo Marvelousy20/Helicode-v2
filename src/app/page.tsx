@@ -8,9 +8,11 @@ import { CTASection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
 export default function Home() {
   return (
-    <div>
-      <div className="px-8 md:px-18 font-helvetica">
+    <div className="font-helvetica">
+      <div className="sm:px-8 md:px-18">
         <Header />
+      </div>
+      <div className="px-8 md:px-18">
         <HeroSection />
         <BackedBy />
         <FeaturesSection />

@@ -10,7 +10,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-[#F8FAFC] border-border sticky top-0 z-50 rounded-xl">
+    <div className="bg-[#F8FAFC] border-border sticky top-0 z-50 md:rounded-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
