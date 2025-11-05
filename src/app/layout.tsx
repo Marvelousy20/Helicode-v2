@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const helvetica = localFont({
+const helvetica = localFont({
   src: [
     {
       path: "../../public/fonts/HelveticaNowDisplay-Bold.woff",
