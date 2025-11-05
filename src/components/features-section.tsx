@@ -21,7 +21,7 @@ export function FeaturesSection() {
             <div className="bg-[#DBE8FB] rounded-3xl p-10">
               <div className="flex justify-center">
                 <Image
-                  src="/matched.svg"
+                  src="/matched.png"
                   alt="Matched.svg"
                   width={495}
                   height={257}
@@ -40,7 +40,7 @@ export function FeaturesSection() {
             <div className="bg-[#FBECE7] rounded-3xl p-10">
               <div className="flex justify-center">
                 <Image
-                  src="/subscription.svg"
+                  src="/subscription.png"
                   alt="Subscription.svg"
                   width={495}
                   height={257}
@@ -60,7 +60,7 @@ export function FeaturesSection() {
             <div className="bg-[#F5EAFB] rounded-3xl flex flex-col">
               <div className="flex justify-center mt-20">
                 <Image
-                  src="/onboard.svg"
+                  src="/onboard.png"
                   alt="Onboarding.svg"
                   width={893}
                   height={172}
@@ -80,7 +80,7 @@ export function FeaturesSection() {
             <div className="bg-[#DBE8FB] rounded-3xl p-10">
               <div className="flex justify-center">
                 <Image
-                  src="/pay.svg"
+                  src="/pay.png"
                   alt="Matched.svg"
                   width={495}
                   height={257}
